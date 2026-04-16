@@ -1,0 +1,3 @@
+[submodule "assets/typst-pdf-gen"]
+	path = assets/typst-pdf-gen
+	url = https://github.com/fky2015/resume-ng-typst.git
