@@ -89,6 +89,8 @@ license: MIT
 
 文件开头必须导入标准的resume-ng模板： ```typst #import "@preview/resume-ng:1.0.0": *```
 
+**⚠️ 重要：生成前必须阅读 `references/typst-caveats.md`，了解符号转义规则！**
+
 可参考
 
 `assets\reference\resume.typ`
@@ -105,3 +107,4 @@ PDF 会生成在当前工作目录。
 本技能附带以下参考资料，在生成简历时可按需查阅：
 - `references/star-law-examples.md`：STAR法则应用示例
 - `references/action-verbs.md`：简历常用强力动词列表
+- `references/typst-caveats.md`：**必读** Typst 模板注意事项，包括符号转义、编码问题、常见错误排查
