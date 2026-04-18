@@ -10,17 +10,16 @@ license: MIT
 ## 技能概述
 本技能帮助用户将零散的个人经历和项目信息，整理成符合招聘标准的专业简历，并最终生成PDF格式文件。核心特点是**严格基于用户提供的真实信息**，结合目标岗位的职位描述(JD)进行针对性优化，绝不编造任何经历或技能。
 
-## 初始化（首次使用）
+## 脚本路径说明
 
-如未安装依赖，运行：
+以下脚本路径均相对于 skill base directory（skill 所在目录），不依赖当前工作目录：
 
-```bash
-python scripts/install_deps.py
-```
+| 操作 | 命令 |
+|------|------|
+| 安装依赖 | `python scripts/install_deps.py` |
+| 生成 PDF | `python scripts/make_resume.py path/to/resume.typ` |
 
 这会将 Typst 编译器下载到 `assets/bin/`。
-
----
 
 ---
 
@@ -179,6 +178,15 @@ python scripts/install_deps.py
 
 ## 第三步：生成TYP格式简历
 
+> ⚠️ **强制前置：生成 .typ 文件前，必须先读取 `references/typst-caveats.md`，逐项检查避免编译错误。**
+
+**typst-caveats.md 核心检查清单**（生成文件前必查）：
+- [ ] `C++` 改为 `C\+\+`
+- [ ] `C#` 改为 `C\#`
+- [ ] list item 中的括号改为逗号或空格
+- [ ] `project.with()` 中必须包含 `author: (name: "姓名")` 参数
+- [ ] 文件保存为 UTF-8 无 BOM 编码
+
 **数据来源**：优先从 `user_data/` 读取 profile.md 和 projects/；如果没有持久化数据，则要求用户输入。
 
 **处理逻辑**：
@@ -203,6 +211,8 @@ python scripts/install_deps.py
 调用 `python scripts/make_resume.py path/to/resume.typ`
 
 PDF 会生成在当前工作目录。
+
+> 脚本路径相对于 skill base directory，详细说明见上方「脚本路径说明」章节。
 
 ## 参考资料
 本技能附带以下参考资料，在生成简历时可按需查阅：

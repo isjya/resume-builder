@@ -36,7 +36,8 @@ def download_typst(max_retries=3):
     """Download typst compiler to assets/bin/"""
     filename, url, extract_dir, exe_name = get_platform_info()
 
-    bin_dir = Path("assets/bin")
+    script_dir = Path(__file__).parent.resolve()
+    bin_dir = script_dir.parent / "assets" / "bin"
     bin_dir.mkdir(parents=True, exist_ok=True)
 
     archive_path = bin_dir / filename
