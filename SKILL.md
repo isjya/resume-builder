@@ -178,11 +178,13 @@ license: MIT
 
 ## 第三步：生成TYP格式简历
 
-> ⚠️ **强制前置：生成 .typ 文件前，必须先读取 `references/typst-caveats.md`，逐项检查避免编译错误。**
+> ⚠️ **强制前置：生成 .typ 文件前，必须先读取 `references/typst-syntax.md`，逐项检查避免编译错误。**
 
-**typst-caveats.md 核心检查清单**（生成文件前必查）：
-- [ ] `C++` 改为 `C\+\+`
-- [ ] `C#` 改为 `C\#`
+**typst-synta.md 核心检查清单**（生成文件前必查）：
+
+- [ ] `+` 改为 `\+`
+- [ ] `#` 改为 `\#`
+- [ ] `@`改为`\@`
 - [ ] list item 中的括号改为逗号或空格
 - [ ] `project.with()` 中必须包含 `author: (name: "姓名")` 参数
 - [ ] 文件保存为 UTF-8 无 BOM 编码
